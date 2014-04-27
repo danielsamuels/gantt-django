@@ -1,0 +1,122 @@
+// Imports
+@import "compass/reset";
+@import "functions";
+@import "variables";
+
+*, *:before, *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.sidebar {
+    float: left;
+    width: $sidebar--width;
+    height: 100%;
+    padding: rem-calc(0 8);
+    border-right: 1px solid #fff;
+    background: $primary-color;
+
+    .sidebar__header {
+        color: #fff;
+        font-size: rem-calc(30);
+        text-align: center;
+        margin: rem-calc(8 0 16);
+    }
+
+    [class^="sidebar__person"] {
+        height: $row--height;
+    }
+
+    .person__image {
+        float: left;
+        border-radius: 50%;
+        padding: rem-calc(8 0);
+    }
+
+    .person__name {
+        display: inline-block;
+        float: left;
+        color: #fff;
+        line-height: $row--height;
+        margin-left: rem-calc(8);
+    }
+}
+
+.main {
+    float: left;
+    width: calc(100% - #{$sidebar--width});
+    height: 100%;
+    overflow: auto;
+}
+
+.calendar__date, [class^="calendar__date--"] {
+    float: left;
+    width: $calendar__date--width;
+    height: $calendar_date--height;
+    line-height: $calendar_date--height;
+    text-align: center;
+}
+
+// Calendar header row and calendar item contextual changes.
+header {
+    height: $header--height;
+    background: $primary-color;
+
+    [class^="calendar__month"], .calendar__dates {
+        color: #fff;
+    }
+
+    .calendar__month__header {
+        float: left;
+        text-align: center;
+        height: $calendar_month--height;
+        line-height: $calendar_month--height;
+    }
+}
+
+// Project items with calendar item contextual changes.
+.project-items {
+    height: calc(100% - #{$header--height});
+
+    [class^="calendar__month"] {
+        border-bottom: 1px solid $border-color;
+    }
+
+    [class^="calendar__dates"] {
+        height: $row--height;
+    }
+
+    .calendar__date, [class^="calendar__date--"] {
+        height: $row--height;
+        line-height: $row--height;
+        padding: rem-calc(8 0);
+    }
+
+    .calendar__date:hover {
+        cursor: pointer;
+
+        &:before {
+            content: "+";
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: $row--height - rem-calc(16);
+            color: $secondary-color;
+            background: $calendar__date--hover;
+            border: 1px solid #b8c6c5;
+        }
+    }
+
+    .calendar__item {
+        background: $secondary-color;
+        color: #fff;
+        text-align: center;
+        height: $row--height - rem-calc(16);
+        line-height: $row--height - rem-calc(16);
+    }
+}

@@ -1,0 +1,50 @@
+{% verbatim %}
+<!DOCTYPE html>
+<html ng-app="ganttApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <link rel="stylesheet" href="/static/css/screen.css">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body ng-controller="DataCtrl">
+        <aside class="sidebar">
+            <h1 class="sidebar__header">Gantt-o-licious</h1>
+            <div ng-repeat="user in users" data-id="{{ user.id }}" class="sidebar__person--height-1">
+                <img ng-src="{{ user.image }}" alt="" class="person__image">
+                <span class="person__name">{{ user.name }}</span>
+            </div>
+        </aside>
+        <div class="main">
+            <header class="calendar" style="width: calc(50px * {{ date_length }});">
+                <!-- Month headers -->
+                <div class="calendar__months">
+                    <h2 class="calendar__month__header" ng-repeat="month in months" style="width: calc(50px * {{ month.days }});">{{ month.human }}</h2>
+                </div>
+
+                <!-- Dates -->
+                <ul class="calendar__dates">
+                    <li ng-repeat="date in dates" class="calendar__date">
+                        {{ date | date:"d" }}
+                    </li>
+                </ul>
+            </header>
+
+            <div class="project-items">
+                <ul class="calendar__dates" ng-repeat="user in users">
+                    <li class="calendar__date" style="width: calc(50px * {{ item.days }});" ng-repeat="item in timeline_items | filter:equals(item.user, user.id)">
+                        {{ item.project }} ({{ item.start_date}} - {{ item.end_date }})
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="/static/js/date.js"></script>
+        <script src="/static/js/app.js"></script>
+    </body>
+</html>
+{% endverbatim %}

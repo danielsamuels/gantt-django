@@ -1,0 +1,37 @@
+<form method="post" action="">
+    {% csrf_token %}
+
+    {{ form.organisation.label_tag }}
+    {{ form.organisation }}
+    {{ form.organisation.errors }}
+
+    <br>
+
+    {{ form.first_name.label_tag }}
+    {{ form.first_name }}
+    {{ form.first_name.errors }}
+
+    <br>
+
+    {{ form.last_name.label_tag }}
+    {{ form.last_name }}
+    {{ form.last_name.errors }}
+
+    <br>
+
+    {{ form.email_address.label_tag }}
+    {{ form.email_address }}
+    {{ form.email_address.errors }}
+
+    <br>
+
+    {{ form.password.label_tag }}
+    {{ form.password }}
+    {{ form.password.errors }}
+
+    <br>
+
+    <input type="submit">
+</form>
+
+<p>Already have an account? <a href="{% url 'site:login' %}">Login.</a></p>

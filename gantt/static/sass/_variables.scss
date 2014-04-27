@@ -1,0 +1,16 @@
+// Color Variables
+$primary-color: #3e606f;
+$secondary-color: #193441;
+$calendar__date--hover: #e1e9ed;
+$border-color: #e5e8df;
+
+// Fonts and sizes
+$rem-base: 16px;
+
+// Element dimensions
+$sidebar--width: rem-calc(217);
+$header--height: rem-calc(54);
+$row--height: rem-calc(48);
+$calendar__date--width: rem-calc(50);
+$calendar_month--height: $header--height / 2;
+$calendar_date--height: $header--height / 2;

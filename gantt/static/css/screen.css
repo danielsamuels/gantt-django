@@ -1,0 +1,187 @@
+/* line 17, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../usr/local/Cellar/ruby/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 6, ../sass/screen.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 12, ../sass/screen.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 16, ../sass/screen.scss */
+.sidebar {
+  float: left;
+  width: 13.5625rem;
+  height: 100%;
+  padding: 0 0.5rem;
+  border-right: 1px solid #fff;
+  background: #3e606f;
+}
+/* line 24, ../sass/screen.scss */
+.sidebar .sidebar__header {
+  color: #fff;
+  font-size: 1.875rem;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+/* line 31, ../sass/screen.scss */
+.sidebar [class^="sidebar__person"] {
+  height: 3rem;
+}
+/* line 35, ../sass/screen.scss */
+.sidebar .person__image {
+  float: left;
+  border-radius: 50%;
+  padding: 0.5rem 0;
+}
+/* line 41, ../sass/screen.scss */
+.sidebar .person__name {
+  display: inline-block;
+  float: left;
+  color: #fff;
+  line-height: 3rem;
+  margin-left: 0.5rem;
+}
+
+/* line 50, ../sass/screen.scss */
+.main {
+  float: left;
+  width: calc(100% - 13.5625rem);
+  height: 100%;
+  overflow: auto;
+}
+
+/* line 57, ../sass/screen.scss */
+.calendar__date, [class^="calendar__date--"] {
+  float: left;
+  width: 3.125rem;
+  height: 1.6875rem;
+  line-height: 1.6875rem;
+  text-align: center;
+}
+
+/* line 66, ../sass/screen.scss */
+header {
+  height: 3.375rem;
+  background: #3e606f;
+}
+/* line 70, ../sass/screen.scss */
+header [class^="calendar__month"], header .calendar__dates {
+  color: #fff;
+}
+/* line 74, ../sass/screen.scss */
+header .calendar__month__header {
+  float: left;
+  text-align: center;
+  height: 1.6875rem;
+  line-height: 1.6875rem;
+}
+
+/* line 83, ../sass/screen.scss */
+.project-items {
+  height: calc(100% - 3.375rem);
+}
+/* line 86, ../sass/screen.scss */
+.project-items [class^="calendar__month"] {
+  border-bottom: 1px solid #e5e8df;
+}
+/* line 90, ../sass/screen.scss */
+.project-items [class^="calendar__dates"] {
+  height: 3rem;
+}
+/* line 94, ../sass/screen.scss */
+.project-items .calendar__date, .project-items [class^="calendar__date--"] {
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0.5rem 0;
+}
+/* line 100, ../sass/screen.scss */
+.project-items .calendar__date:hover {
+  cursor: pointer;
+}
+/* line 103, ../sass/screen.scss */
+.project-items .calendar__date:hover:before {
+  content: "+";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 2rem;
+  color: #193441;
+  background: #e1e9ed;
+  border: 1px solid #b8c6c5;
+}
+/* line 115, ../sass/screen.scss */
+.project-items .calendar__item {
+  background: #193441;
+  color: #fff;
+  text-align: center;
+  height: 2rem;
+  line-height: 2rem;
+}
