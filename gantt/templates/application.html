@@ -27,17 +27,23 @@
 
                 <!-- Dates -->
                 <ul class="calendar__dates">
-                    <li ng-repeat="date in dates" class="calendar__date">
+                    <li ng-repeat="date in dates" class="calendar__date" data-day="{{ date | date:'d' }}">
                         {{ date | date:"d" }}
                     </li>
                 </ul>
             </header>
 
             <div class="project-items">
-                <ul class="calendar__dates" ng-repeat="user in users">
+                <ul class="calendar__dates" style="width: calc(50px * {{ date_length }});" ng-repeat="user in users">
+                    <li class="calendar__date" style="width: calc(50px * {{ date.days }});" ng-repeat="date in user.dates">
+                        <a class="calendar__date__add" href="#" ng-if="!date.item">+</a>
+                        <div class="calendar__item" ng-if="date.item">{{ date.item }}</div>
+                    </li>
+                    <!--
                     <li class="calendar__date" style="width: calc(50px * {{ item.days }});" ng-repeat="item in timeline_items | filter:equals(item.user, user.id)">
                         {{ item.project }} ({{ item.start_date}} - {{ item.end_date }})
                     </li>
+                    -->
                 </ul>
             </div>
         </div>

@@ -11,6 +11,7 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 .sidebar {
@@ -71,11 +72,19 @@ header {
         color: #fff;
     }
 
+    .calendar__date[data-day="1"]:not(:first-of-type) {
+        border-left: 1px solid #fff;
+    }
+
     .calendar__month__header {
         float: left;
         text-align: center;
         height: $calendar_month--height;
         line-height: $calendar_month--height;
+
+        & + .calendar__month__header {
+            border-left: 1px solid #fff;
+        }
     }
 }
 
@@ -89,6 +98,7 @@ header {
 
     [class^="calendar__dates"] {
         height: $row--height;
+        border-bottom: 1px solid $border-color;
     }
 
     .calendar__date, [class^="calendar__date--"] {
@@ -97,18 +107,19 @@ header {
         padding: rem-calc(8 0);
     }
 
-    .calendar__date:hover {
-        cursor: pointer;
+    .calendar__date__add {
+        opacity: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: $row--height - rem-calc(16);
+        color: $secondary-color;
+        background: $calendar__date--hover;
+        border: 1px solid #b8c6c5;
+        text-decoration: none;
 
-        &:before {
-            content: "+";
-            display: block;
-            width: 100%;
-            height: 100%;
-            line-height: $row--height - rem-calc(16);
-            color: $secondary-color;
-            background: $calendar__date--hover;
-            border: 1px solid #b8c6c5;
+        &:hover {
+            opacity: 1;
         }
     }
 

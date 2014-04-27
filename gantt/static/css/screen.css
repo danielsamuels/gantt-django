@@ -73,9 +73,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 12, ../sass/screen.scss */
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 .sidebar {
   float: left;
   width: 13.5625rem;
@@ -84,24 +85,24 @@ html, body {
   border-right: 1px solid #fff;
   background: #3e606f;
 }
-/* line 24, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .sidebar .sidebar__header {
   color: #fff;
   font-size: 1.875rem;
   text-align: center;
   margin: 0.5rem 0 1rem;
 }
-/* line 31, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .sidebar [class^="sidebar__person"] {
   height: 3rem;
 }
-/* line 35, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .sidebar .person__image {
   float: left;
   border-radius: 50%;
   padding: 0.5rem 0;
 }
-/* line 41, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .sidebar .person__name {
   display: inline-block;
   float: left;
@@ -110,7 +111,7 @@ html, body {
   margin-left: 0.5rem;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .main {
   float: left;
   width: calc(100% - 13.5625rem);
@@ -118,7 +119,7 @@ html, body {
   overflow: auto;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 .calendar__date, [class^="calendar__date--"] {
   float: left;
   width: 3.125rem;
@@ -127,48 +128,53 @@ html, body {
   text-align: center;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 header {
   height: 3.375rem;
   background: #3e606f;
 }
-/* line 70, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 header [class^="calendar__month"], header .calendar__dates {
   color: #fff;
 }
-/* line 74, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
+header .calendar__date[data-day="1"]:not(:first-of-type) {
+  border-left: 1px solid #fff;
+}
+/* line 79, ../sass/screen.scss */
 header .calendar__month__header {
   float: left;
   text-align: center;
   height: 1.6875rem;
   line-height: 1.6875rem;
 }
+/* line 85, ../sass/screen.scss */
+header .calendar__month__header + .calendar__month__header {
+  border-left: 1px solid #fff;
+}
 
-/* line 83, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .project-items {
   height: calc(100% - 3.375rem);
 }
-/* line 86, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .project-items [class^="calendar__month"] {
   border-bottom: 1px solid #e5e8df;
 }
-/* line 90, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .project-items [class^="calendar__dates"] {
   height: 3rem;
+  border-bottom: 1px solid #e5e8df;
 }
-/* line 94, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .project-items .calendar__date, .project-items [class^="calendar__date--"] {
   height: 3rem;
   line-height: 3rem;
   padding: 0.5rem 0;
 }
-/* line 100, ../sass/screen.scss */
-.project-items .calendar__date:hover {
-  cursor: pointer;
-}
-/* line 103, ../sass/screen.scss */
-.project-items .calendar__date:hover:before {
-  content: "+";
+/* line 110, ../sass/screen.scss */
+.project-items .calendar__date__add {
+  opacity: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -176,8 +182,13 @@ header .calendar__month__header {
   color: #193441;
   background: #e1e9ed;
   border: 1px solid #b8c6c5;
+  text-decoration: none;
 }
-/* line 115, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
+.project-items .calendar__date__add:hover {
+  opacity: 1;
+}
+/* line 126, ../sass/screen.scss */
 .project-items .calendar__item {
   background: #193441;
   color: #fff;

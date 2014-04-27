@@ -33,7 +33,7 @@ class Data(LoginRequired, JSONResponseMixin, ListView):
                 'start_date': item.start_date.strftime('%d/%m/%Y'),
                 'end_date': item.end_date.strftime('%d/%m/%Y'),
                 'description': item.description,
-                'days': (item.end_date - item.start_date).days
+                'days': (item.end_date - item.start_date).days + 1
             }
             for item
             in TimelineItem.objects.filter(
